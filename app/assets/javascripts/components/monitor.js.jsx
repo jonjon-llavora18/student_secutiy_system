@@ -24,14 +24,14 @@ var Monitor = React.createClass({
         if (data != null){
           $this.setState({reset: false});
           $this.setState({ activePage: "success" });
-              
+
           var obj = document.createElement("audio");
 	        obj.src="https://www.soundjay.com/button/sounds/beep-29.mp3";
 	        obj.volume=0.60;
 	        obj.autoPlay=false;
 	        obj.preLoad=true;
-	        obj.controls=true;       
-	 
+	        obj.controls=true;
+
 	        obj.play();
         } else if(data == "empty") {
           $this.setState({ activePage: "initial" });
