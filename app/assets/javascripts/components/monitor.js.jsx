@@ -1,28 +1,32 @@
+var sec = 1;
+var hasData = false;
+function check_data() {
+  if (sec <= 5) {
+    hasData = false;
+    sec += 1
+  } else {
+    sec = 1
+  }
+  $.ajax({
+    url: "/get_api",
+    dataType: "json",
+    data: {seconds: sec}
+  }).success(function(data){
+  }).fail(function(){
+    console.log("Cannot load view");
+  }).complete(function(){
+    setTimeout(function(){check_data();}, 1000);
+  });
+}
+
 var Monitor = React.createClass({
 	getInitialState: function() {
 		return {
 			studentData: []
 		}
 	},
-
 	componentDidMount: function() {
-		$.ajax({
-      url: 'https://jsonplaceholder.typicode.com/users',
-      data: {
-         format: 'json'
-      },
-      error: function() {
-         $('#info').html('<p>An error has occurred</p>');
-      },
-      dataType: 'jsonp',
-      success: function(data) {
-        data.map(function(item, index) {
-         	this.state.studentData.push(item.name);
-        });
-        console.log(this.state.studentData);
-      },
-      type: 'GET'
-   });
+    check_data();
 	},
 
 	render: function() {
