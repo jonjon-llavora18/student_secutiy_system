@@ -3,15 +3,18 @@ var SearchForm = React.createClass({
 		id: React.PropTypes.string
 	},
 
-	onSubmit: function(e) {
-		alert("Hello There");
+	handleSubmit: function(e) {
+		var inputVal = this.refs.inputSimulator.value;
+
+		
+
 		e.preventDefault();
 	},
 
 	render: function() {
 		return (
-			<form onSubmit={this.onSubmit}>
-				<input className="form-control" type="text" />
+			<form onSubmit={this.handleSubmit}>
+				<input className="form-control" type="text" ref="inputSimulator" />
 			</form>
 		)
 	}
