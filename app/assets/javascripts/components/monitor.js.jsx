@@ -4,7 +4,7 @@ var Monitor = React.createClass({
             sec: 1,
             studentData: [],
             activePage: "initial",
-     				time: 2000
+     				time: 1000
         }
     },
 
@@ -34,7 +34,6 @@ var Monitor = React.createClass({
 	        obj.controls=true;       
 	 
 	        obj.play();
-	        setTimeout(obj.play, 2000);
         } else if(data == "error") {
         	resetData = false;
           $this.setState({ activePage: "error" });
@@ -44,9 +43,9 @@ var Monitor = React.createClass({
       }).fail(function(){
         console.log("fail");
       }).complete(function(){
-      	$this.setState({ sec: 1, time: 2000 });
+      	$this.setState({ sec: 1, time: 1000 });
         if (!resetData) {
-        	$this.setState({ sec: 5, time: 4000 });
+        	$this.setState({ sec: 5, time: 3000 });
         }
       });
     },
