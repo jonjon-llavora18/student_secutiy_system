@@ -1,43 +1,45 @@
 var Monitor = React.createClass({
     getInitialState: function() {
-        return {
-            sec: 1,
-            studentData: [],
-            activePage: "initial",
-     				time: 3000
-        }
+      return {
+        studentData: [],
+        activePage: "initial",
+        sec: 1,
+        reset: true,
+        time: 1000
+      }
     },
 
     componentDidMount: function() {
-    	setInterval(this.checkData, this.state.time);
+      this.checkData();
     },
 
-
     checkData: function() {
-      var resetData = true;
-      var $this = this;
-
+      var $this = this
+      $this.setState({reset: true});
       $.ajax({
         url: "/get_api",
         dataType: "json",
         data: {seconds: $this.state.sec}
       }).success(function(data){
         if (data != null){
-          resetData = false;
-          $this.setState({ activePage: "success", studentData: data });
-        } else if(data == "error") {
-        	resetData = false;
+          $this.setState({reset: false});
+          $this.setState({ activePage: "success" });
+        } else if(data == "empty") {
+          $this.setState({ activePage: "initial" });
+        } else {
+          $this.setState({reset: false});
           $this.setState({ activePage: "error" });
-      	} else {
-      		$this.setState({ activePage: "initial" });
-      	}
-      }).fail(function(){
-        console.log("fail");
-      }).complete(function(){
-      	$this.setState({ sec: 1, time: 3000 });
-        if (!resetData) {
-        	$this.setState({ sec: 5, time: 5000 });
         }
+      }).fail(function(){
+        $this.setState({ activePage: "initial" });
+      }).complete(function(){
+        $this.setState({time: 1000});
+        $this.setState({sec: 1});
+        if (!$this.state.reset) {
+          $this.setState({time: 3000});
+          $this.setState({sec: 5});
+        }
+        setTimeout(function(){$this.checkData();}, $this.state.time);
       });
     },
 
