@@ -24,6 +24,15 @@ var Monitor = React.createClass({
         if (data != null){
           $this.setState({reset: false});
           $this.setState({ activePage: "success" });
+              
+          var obj = document.createElement("audio");
+	        obj.src="https://www.soundjay.com/misc/sounds/censor-beep-01.mp3";
+	        obj.volume=0.10;
+	        obj.autoPlay=false;
+	        obj.preLoad=true;
+	        obj.controls=true;       
+	 
+	        obj.play();
         } else if(data == "empty") {
           $this.setState({ activePage: "initial" });
         } else {
@@ -33,11 +42,9 @@ var Monitor = React.createClass({
       }).fail(function(){
         $this.setState({ activePage: "initial" });
       }).complete(function(){
-        $this.setState({time: 1000});
-        $this.setState({sec: 1});
-        if (!$this.state.reset) {
-          $this.setState({time: 3000});
-          $this.setState({sec: 5});
+      	$this.setState({ sec: 1, time: 1000 });
+        if (!resetData) {
+        	$this.setState({ sec: 5, time: 3000 });
         }
         setTimeout(function(){$this.checkData();}, $this.state.time);
       });
