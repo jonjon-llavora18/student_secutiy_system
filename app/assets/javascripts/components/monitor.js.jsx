@@ -1,47 +1,65 @@
-var sec = 1;
-function check_data() {
-  resetData = true;
-  $.ajax({
-    url: "/get_api",
-    dataType: "json",
-    data: {seconds: sec}
-  }).success(function(data){
-    if (data != null){
-      resetData = false;
-    }
-    console.log(data);
-  }).fail(function(){
-    console.log("Cannot load view");
-  }).complete(function(){
-    time = 1000;
-    sec = 1;
-    if (!resetData) {
-      time = 5000;
-      sec = 5;
-    }
-    setTimeout(function(){check_data();}, time);
-  });
-}
-
 var Monitor = React.createClass({
-	getInitialState: function() {
-		return {
-			studentData: []
-		}
-	},
-	componentDidMount: function() {
-    check_data();
-	},
+    getInitialState: function() {
+        return {
+            sec: 1,
+            studentData: [],
+            activePage: "initial",
+     				time: 3000
+        }
+    },
 
-	render: function() {
-		return (
-			<div>
-				<h1 className="home-header homeHeader">
-					<img src="images/logo.png" />
-					Student Security System
-				</h1>
-				<InitialPage />
-		 	</div>
-		)
-	}
+    componentDidMount: function() {
+    	setInterval(this.checkData, this.state.time);
+    },
+
+
+    checkData: function() {
+      var resetData = true;
+      var $this = this;
+
+      $.ajax({
+        url: "/get_api",
+        dataType: "json",
+        data: {seconds: $this.state.sec}
+      }).success(function(data){
+        if (data != null){
+          resetData = false;
+          $this.setState({ activePage: "success" });
+        } else if(data == "error") {
+          $this.setState({ activePage: "error" });
+      	} else {
+      		$this.setState({ activePage: "initial" });
+      	}
+      }).fail(function(){
+        console.log("fail");
+      }).complete(function(){
+      	$this.setState({ sec: 1, time: 3000 });
+        if (!resetData) {
+        	$this.setState({ sec: 5, time: 5000 });
+        }
+      });
+    },
+
+    render: function() {
+        var activePage;
+        if(this.state.activePage == "initial") {
+            activePage = <InitialPage />;
+        }
+        if (this.state.activePage == "error") {
+            activePage = <ErrorPage />;
+        }
+        if (this.state.activePage == "success") {
+            activePage = <DetailPage />;
+        }
+
+        return (
+            <div>
+                <h1 className="home-header homeHeader">
+                    <img src="images/logo.png" />
+                    Student Security System
+                </h1>
+                {activePage}
+             </div>
+        )
+    }
 });
