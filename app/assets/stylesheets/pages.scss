@@ -49,31 +49,6 @@ body, html {
   transition: all 0.8s ease;
 }
 
-.school-announcement {
-  color: #fff;
-  border-bottom: 5px solid rgba(0, 0, 0, 0.2);
-  border-top: 5px solid rgba(0, 0, 0, 0.2);
-  font-size: 25px;
-  line-height: 17px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 70px;
-  width: 70%;
-  margin-top: 80px;
-  overflow:hidden;
-  position: relative;
-
-  p {
-    white-space: nowrap;
-    overflow: hidden;
-    position: absolute;
-    font-size: 19px;
-    line-height: 30px;
-    left: 10px;
-    margin-right: 10px;
-  }
-}
-
 .student-information {
   box-sizing: border-box;
   display: block;
@@ -87,14 +62,18 @@ body, html {
   font-size: 90px;
   letter-spacing: 3px;
   font-weight: 700;
+  margin-bottom: 30px;
+  margin-top: 70px;
 }
 
 .box-hr {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  padding: 5px 10px;
+  display: inline-block;
+  line-height: 130px;
   margin-left: 5px;
   margin-right: 5px;
+  width: 140px;
 
   &:first-of-type {
     margin-left: 0;
@@ -183,10 +162,6 @@ body, html {
   line-height: 80px;
   font-weight: 700;
   text-transform: uppercase;
-}
-
-.announcement-imp {
-  color: #fff838;
 }
 
 // Login User

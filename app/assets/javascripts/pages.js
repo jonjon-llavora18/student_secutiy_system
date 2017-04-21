@@ -4,7 +4,6 @@ $(document).ready(function() {
   }, 1000);
 
   digitalClock();
-  marquee($(".school-announcement"), $(".schoolAnnouncement"));
 });
 
 function studentShow() {
@@ -28,41 +27,4 @@ function digitalClock() {
     }
   }
   setInterval(clock, 1000);
-}
-
-function marquee(a, b) {
-  var width = b.width();
-  var start_pos = a.width();
-  var end_pos = -width;
-
-  function scroll() {
-    if (b.position().left <= -width) {
-      b.css("left", start_pos);
-      scroll();
-    } else {
-      time = (parseInt(b.position().left, 10) - end_pos) *
-      (95000 / (start_pos - end_pos));
-      b.animate({
-      "left": -width
-    }, time, "linear", function() {
-      scroll();
-      });
-    }
-  }
-
-  b.css({
-    "width": width,
-    "left": start_pos
-  });
-
-  scroll(a, b);
-
-  b.mouseenter(function() {
-    b.stop();
-    b.clearQueue();
-  });
-
-  b.mouseleave(function() {
-    scroll(a, b);
-  });
 }
