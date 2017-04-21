@@ -25,6 +25,8 @@ body, html {
   float: right;
 }
 
+
+// Homepage
 .homepage {
   background: rgba(0,96,199,1);
   background: -moz-linear-gradient(top, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
@@ -41,16 +43,64 @@ body, html {
   color: #fff;
   font-size: 5vw;
   letter-spacing: 1px;
-  margin-top: 20%;
+  margin-top: 15%;
   text-align: center;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
   transition: all 0.8s ease;
 }
 
+.school-announcement {
+  color: #fff;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.2);
+  border-top: 5px solid rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  line-height: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top: 80px;
+  overflow:hidden;
+  position: relative;
+
+  p {
+    white-space: normal;
+    overflow: hidden;
+    position: absolute;
+    left: 10px;
+    margin-right: 10px;
+    top: 10px;
+  }
+}
+
 .student-information {
   box-sizing: border-box;
+  display: none;
   padding: 30px;
   text-align: center;
+}
+
+.home-clock {
+  color: #fff;
+  text-align: center;
+  font-size: 90px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.box-hr {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 
 .student-photo-img {
@@ -98,4 +148,73 @@ body, html {
   font-size: 60px;
   letter-spacing: 3px;
   font-weight: 700;
+}
+
+.error-mascott {
+  max-width: 150px;
+  width: 100%;
+}
+
+.swipe-error {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 3px solid #ffbe47;
+  border-radius: 10px;
+  display: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  width: 555px;
+  padding: 30px 20px 35px;
+}
+
+.student-error-1 {
+  font-size: 55px;
+  color: #ff8726;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.student-error-2 {
+  font-size: 104px;
+  color: #ff8726;
+  line-height: 80px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+// Login User
+.login_user {
+  text-align: center;
+
+  input {
+    border-radius: 3px;
+    display: inline-block;
+    width: 500px;
+
+    &[type="text"] {
+      background: #fff;
+      border: 3px solid #f9f9f9;
+      padding: 10px 15px;
+      height: 45px;
+      font-size: 20px;
+      margin-bottom: 20px;
+      margin-top: 20%;
+      box-sizing: border-box;
+    }
+
+    &[type="submit"] {
+      background: #7adbff;
+      cursor: pointer;
+      color: #333;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      padding: 10px 15px;
+      height: 45px;
+      font-size: 20px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+  }
 }

@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'nfc_simulators/index'
 
-  root 'pages#index'
+
+  root "pages#index"
+
+  get "login_user", to: "pages#login_user", as: :login_user
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
