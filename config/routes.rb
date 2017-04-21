@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  
+
   get 'pages/index'
   get 'nfc_simulators/index'
 
@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root "pages#index"
 
   get "login_user", to: "pages#login_user", as: :login_user
+  get "get_api", to: "pages#get_api", as: :get_api
+  post "verify_login", to: "pages#verify_login", as: :verify_login
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
