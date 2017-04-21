@@ -28,13 +28,7 @@ body, html {
 
 // Homepage
 .homepage {
-  background: rgba(0,96,199,1);
-  background: -moz-linear-gradient(top, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,96,199,1)), color-stop(100%, rgba(1,47,97,1)));
-  background: -webkit-linear-gradient(top, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
-  background: -o-linear-gradient(top, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
-  background: -ms-linear-gradient(top, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
-  background: linear-gradient(to bottom, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
+  background: #3498db;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0060c7', endColorstr='#012f61', GradientType=0 );
   height: 100vh;
 }

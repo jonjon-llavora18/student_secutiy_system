@@ -28,8 +28,11 @@ var Monitor = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<h1 className="home-header homeHeader">Student Security System</h1>
-				<DetailPage />
+				<h1 className="home-header homeHeader">
+					<img src="images/logo.png" />
+					Student Security System
+				</h1>
+				<InitialPage />
 		 	</div>
 		)
 	}
