@@ -24,8 +24,9 @@ var Monitor = React.createClass({
       }).success(function(data){
         if (data != null){
           resetData = false;
-          $this.setState({ activePage: "success" });
+          $this.setState({ activePage: "success", studentData: data });
         } else if(data == "error") {
+        	resetData = false;
           $this.setState({ activePage: "error" });
       	} else {
       		$this.setState({ activePage: "initial" });
@@ -49,7 +50,7 @@ var Monitor = React.createClass({
             activePage = <ErrorPage />;
         }
         if (this.state.activePage == "success") {
-            activePage = <DetailPage />;
+            activePage = <DetailPage data={this.state.studentData} />;
         }
 
         return (
