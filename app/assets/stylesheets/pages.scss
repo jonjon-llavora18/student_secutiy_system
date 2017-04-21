@@ -1,6 +1,3 @@
-// Place all the styles related to the Welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 body, html {
   font-family: 'Roboto', sans-serif;
   padding: 0;
@@ -28,19 +25,24 @@ body, html {
 
 // Homepage
 .homepage {
-  background: #2980b9;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0060c7', endColorstr='#012f61', GradientType=0 );
+  background: #3498db url("../images/background.png") no-repeat right bottom;
+  background-size: 500px auto;
   height: 100vh;
 }
 
 .home-header {
   color: #fff;
-  font-size: 5vw;
+  font-size: 2vw;
+  font-weight: 700;
   letter-spacing: 1px;
-  margin-top: 15%;
-  text-align: center;
+  margin-top: 20px;
+  text-indent: 20px;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
   transition: all 0.8s ease;
+
+  img {
+    width: 200px;
+  }
 }
 
 .student-information {
@@ -57,7 +59,7 @@ body, html {
   letter-spacing: 3px;
   font-weight: 700;
   margin-bottom: 30px;
-  margin-top: 70px;
+  margin-top: 10%;
 }
 
 .box-hr {

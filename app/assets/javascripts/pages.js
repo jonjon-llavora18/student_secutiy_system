@@ -1,14 +1,6 @@
 $(document).ready(function() {
-  setTimeout(function() {
-    studentShow();
-  }, 1000);
-
   digitalClock();
 });
-
-function studentShow() {
-  $(".homeHeader").css("margin-top", "10%");
-}
 
 function digitalClock() {
   function clock() {
