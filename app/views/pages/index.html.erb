@@ -1,31 +1,3 @@
 <div class="homepage clearfix">
-  <h1 class="home-header homeHeader">Student Security System</h1>
-
-  <div>
-    <div class="home-clock"></div>
-    <div class="school-announcement">
-      <p class="schoolAnnouncement">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" <span class="announcement-imp">(The Extremes of Good and Evil)</span> by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-    </div>
-  </div>
-
-  <div class="student-information clearfix">
-    <div class="student-photo student-information-div">
-      <%= image_tag "dummy_101.jpg", class: "student-photo-img" %>
-    </div>
-    <div class="student-text-info student-information-div">
-      <span class="student-txt-inf student-name">Ivan Pilapil</span>
-      <span class="student-txt-inf student-id">F100033890</span>
-      <span class="student-txt-inf student-timein">IN: 03:44:36</span>
-    </div>
-  </div>
-
-  <div class="swipe-error">
-    <div class="student-photo student-information-div">
-      <%= image_tag "error-mascott.png", class: "error-mascott" %>
-    </div>
-    <div class="student-text-info student-information-div">
-      <span class="student-txt-inf student-error-1">No Student</span>
-      <span class="student-txt-inf student-error-2">Found</span>
-    </div>
-  </div>
+  <%= react_component("Monitor") %>
 </div>
