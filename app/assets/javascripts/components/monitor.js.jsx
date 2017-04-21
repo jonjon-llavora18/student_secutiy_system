@@ -27,35 +27,37 @@ var Monitor = React.createClass({
 
 	render: function() {
 		return (
-			<h1 class="home-header homeHeader">Student Security System</h1>
+			<div>
+				<h1 className="home-header homeHeader">Student Security System</h1>
 
-		  <div>
-		    <div class="home-clock"></div>
-		    <!-- <div class="school-announcement">
-		      <p class="schoolAnnouncement">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-		    </div> -->
-		  </div>
+			  <div>
+			    <div className="home-clock"></div>
+			    <div className="school-announcement">
+			      <p className="schoolAnnouncement">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			    </div>
+			  </div>
 
-		  <div class="student-information clearfix">
-		    <div class="student-photo student-information-div">
-		      <%= image_tag "dummy_101.jpg", class: "student-photo-img" %>
-		    </div>
-		    <div class="student-text-info student-information-div">
-		      <span class="student-txt-inf student-name">Ivan Pilapil</span>
-		      <span class="student-txt-inf student-id">F100033890</span>
-		      <span class="student-txt-inf student-timein">IN: 03:44:36</span>
-		    </div>
-		  </div>
+			  <div className="student-information clearfix">
+			    <div className="student-photo student-information-div">
+			      <img src="dummy_101.jpg" className="student-photo-img" />
+			    </div>
+			    <div className="student-text-info student-information-div">
+			      <span className="student-txt-inf student-name">Ivan Pilapil</span>
+			      <span className="student-txt-inf student-id">F100033890</span>
+			      <span className="student-txt-inf student-timein">IN: 03:44:36</span>
+			    </div>
+			  </div>
 
-		  <div class="swipe-error">
-		    <div class="student-photo student-information-div">
-		      <%= image_tag "error-mascott.png", class: "error-mascott" %>
-		    </div>
-		    <div class="student-text-info student-information-div">
-		      <span class="student-txt-inf student-error-1">No Student</span>
-		      <span class="student-txt-inf student-error-2">Found</span>
-		    </div>
-		  </div>
+			  <div className="swipe-error">
+			    <div className="student-photo student-information-div">
+			      <img src="./images/error-mascott.png" className="error-mascott" />
+			    </div>
+			    <div className="student-text-info student-information-div">
+			      <span className="student-txt-inf student-error-1">No Student</span>
+			      <span className="student-txt-inf student-error-2">Found</span>
+			    </div>
+			  </div>
+		 	</div>
 		)
 	}
 });
