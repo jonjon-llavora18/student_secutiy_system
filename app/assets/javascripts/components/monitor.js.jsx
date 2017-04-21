@@ -1,6 +1,3 @@
-var sec = 1;
-function checkData() {
-}
 var Monitor = React.createClass({
     getInitialState: function() {
       return {
@@ -55,7 +52,7 @@ var Monitor = React.createClass({
             activePage = <ErrorPage />;
         }
         if (this.state.activePage == "success") {
-            activePage = <DetailPage />;
+            activePage = <DetailPage data={this.state.studentData} />;
         }
 
         return (
