@@ -7,11 +7,13 @@ function check_data() {
   } else {
     sec = 1
   }
+
   $.ajax({
     url: "/get_api",
     dataType: "json",
     data: {seconds: sec}
   }).success(function(data){
+  	
   }).fail(function(){
     console.log("Cannot load view");
   }).complete(function(){
