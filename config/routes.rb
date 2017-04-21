@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   get 'pages/index'
+  get 'nfc_simulators/index'
 
   root 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
