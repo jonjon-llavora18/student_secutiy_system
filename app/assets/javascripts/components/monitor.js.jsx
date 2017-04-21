@@ -4,7 +4,7 @@ var Monitor = React.createClass({
             sec: 1,
             studentData: [],
             activePage: "initial",
-     				time: 3000
+     				time: 2000
         }
     },
 
@@ -25,6 +25,16 @@ var Monitor = React.createClass({
         if (data != null){
           resetData = false;
           $this.setState({ activePage: "success", studentData: data });
+
+          var obj = document.createElement("audio");
+	        obj.src="https://www.soundjay.com/misc/sounds/censor-beep-01.mp3";
+	        obj.volume=0.10;
+	        obj.autoPlay=false;
+	        obj.preLoad=true;
+	        obj.controls=true;       
+	 
+	        obj.play();
+	        setTimeout(obj.play, 2000);
         } else if(data == "error") {
         	resetData = false;
           $this.setState({ activePage: "error" });
@@ -34,9 +44,9 @@ var Monitor = React.createClass({
       }).fail(function(){
         console.log("fail");
       }).complete(function(){
-      	$this.setState({ sec: 1, time: 3000 });
+      	$this.setState({ sec: 1, time: 2000 });
         if (!resetData) {
-        	$this.setState({ sec: 5, time: 5000 });
+        	$this.setState({ sec: 5, time: 4000 });
         }
       });
     },
