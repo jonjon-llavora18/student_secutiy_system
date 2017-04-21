@@ -44,32 +44,58 @@ body, html {
   margin-top: 20%;
   text-align: center;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.8s ease;
 }
 
 .student-information {
-  background-color: #fff;
-  border: 2px solid #f2f2f2;
-  border-radius: 5px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  box-sizing: border-box;
   padding: 30px;
-  width: 100%;
+  text-align: center;
 }
 
 .student-photo-img {
-  height: 200px;
-  width: 200px;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  height: 280px;
+  width: 280px;
+}
+
+.student-text-info {
+  margin-left: 35px;
+  margin-top: 8px;
 }
 
 .student-txt-inf {
+  color: #fff;
   display: block;
 }
 
 .student-name {
-  font-size: 2vw;
+  font-size: 75px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+.student-information-div {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .student-id {
-  font-size: 1.5vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 70px;
+  letter-spacing: 3px;
+  margin: 10px auto;
+  font-weight: 700;
+  width: 475px;
+}
+
+.student-timein {
+  color: #badbff;
+  font-size: 60px;
+  letter-spacing: 3px;
+  font-weight: 700;
 }
