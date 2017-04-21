@@ -1,4 +1,9 @@
 <div class="homepage clearfix">
+  <%= form_tag "/verify_login", class: "login_user" do %>
+    <%= text_field_tag "id_number" %>
+    <div class="clearfix"></div>
+    <%= submit_tag "Submit" %>
+  <% end %>
   <form class="login_user">
     <input type="text" placeholder="ID HERE" name="student_id">
     <div class="clearfix"></div>
