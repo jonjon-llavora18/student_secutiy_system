@@ -1,0 +1,76 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after { clear: both; }
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.homepage {
+  background: rgba(0,96,199,1);
+  background: -moz-linear-gradient(top, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,96,199,1)), color-stop(100%, rgba(1,47,97,1)));
+  background: -webkit-linear-gradient(top, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
+  background: -o-linear-gradient(top, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
+  background: -ms-linear-gradient(top, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
+  background: linear-gradient(to bottom, rgba(0,96,199,1) 0%, rgba(1,47,97,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0060c7', endColorstr='#012f61', GradientType=0 );
+  height: 100vh;
+}
+
+.home-header {
+  color: #fff;
+  font-size: 5vw;
+  letter-spacing: 1px;
+  margin-top: 20%;
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.student-information {
+  background-color: #fff;
+  border: 2px solid #f2f2f2;
+  border-radius: 5px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  width: 100%;
+}
+
+.student-photo-img {
+  height: 200px;
+  width: 200px;
+}
+
+.student-txt-inf {
+  display: block;
+}
+
+.student-name {
+  font-size: 2vw;
+}
+
+.student-id {
+  font-size: 1.5vw;
+  bac
+}
