@@ -1,31 +1,30 @@
 var Monitor = React.createClass({
     getInitialState: function() {
-        return {
-            sec: 1,
-            studentData: [],
-            activePage: "initial",
-     				time: 1000
-        }
+      return {
+        studentData: [],
+        activePage: "initial",
+        sec: 1,
+        reset: true,
+        time: 1000
+      }
     },
 
     componentDidMount: function() {
-    	setInterval(this.checkData, this.state.time);
+      this.checkData();
     },
 
-
     checkData: function() {
-      var resetData = true;
-      var $this = this;
-
+      var $this = this
+      $this.setState({reset: true});
       $.ajax({
         url: "/get_api",
         dataType: "json",
         data: {seconds: $this.state.sec}
       }).success(function(data){
         if (data != null){
-          resetData = false;
-          $this.setState({ activePage: "success", studentData: data });
-
+          $this.setState({reset: false});
+          $this.setState({ activePage: "success" });
+              
           var obj = document.createElement("audio");
 	        obj.src="https://www.soundjay.com/misc/sounds/censor-beep-01.mp3";
 	        obj.volume=0.10;
@@ -34,19 +33,20 @@ var Monitor = React.createClass({
 	        obj.controls=true;       
 	 
 	        obj.play();
-        } else if(data == "error") {
-        	resetData = false;
+        } else if(data == "empty") {
+          $this.setState({ activePage: "initial" });
+        } else {
+          $this.setState({reset: false});
           $this.setState({ activePage: "error" });
-      	} else {
-      		$this.setState({ activePage: "initial" });
-      	}
+        }
       }).fail(function(){
-        console.log("fail");
+        $this.setState({ activePage: "initial" });
       }).complete(function(){
       	$this.setState({ sec: 1, time: 1000 });
         if (!resetData) {
         	$this.setState({ sec: 5, time: 3000 });
         }
+        setTimeout(function(){$this.checkData();}, $this.state.time);
       });
     },
 
