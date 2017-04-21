@@ -9,6 +9,7 @@ var ErrorPage = React.createClass({
 			    <div className="student-text-info student-information-div">
 			      <span className="student-txt-inf student-error-1">No Student</span>
 			      <span className="student-txt-inf student-error-2">Found</span>
+			      <span className="student-txt-inf student-error-3">!</span>
 			    </div>
 			  </div>
 			</div>
