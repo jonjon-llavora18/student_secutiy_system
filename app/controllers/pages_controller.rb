@@ -22,4 +22,5 @@ class PagesController < ApplicationController
 
     redirect_to login_user_path
   end
+
 end
