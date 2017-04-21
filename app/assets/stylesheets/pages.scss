@@ -57,18 +57,20 @@ body, html {
   line-height: 17px;
   margin-left: auto;
   margin-right: auto;
+  height: 70px;
   width: 70%;
   margin-top: 80px;
   overflow:hidden;
   position: relative;
 
   p {
-    white-space: normal;
+    white-space: nowrap;
     overflow: hidden;
     position: absolute;
+    font-size: 19px;
+    line-height: 30px;
     left: 10px;
     margin-right: 10px;
-    top: 10px;
   }
 }
 
@@ -181,6 +183,10 @@ body, html {
   line-height: 80px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.announcement-imp {
+  color: #fff838;
 }
 
 // Login User

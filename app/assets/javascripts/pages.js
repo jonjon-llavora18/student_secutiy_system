@@ -41,7 +41,7 @@ function marquee(a, b) {
       scroll();
     } else {
       time = (parseInt(b.position().left, 10) - end_pos) *
-      (10000 / (start_pos - end_pos));
+      (95000 / (start_pos - end_pos));
       b.animate({
       "left": -width
     }, time, "linear", function() {
