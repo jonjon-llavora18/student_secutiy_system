@@ -1,23 +1,25 @@
 var sec = 1;
-var hasData = false;
 function check_data() {
-  if (sec <= 5) {
-    hasData = false;
-    sec += 1
-  } else {
-    sec = 1
-  }
-
+  resetData = true;
   $.ajax({
     url: "/get_api",
     dataType: "json",
     data: {seconds: sec}
   }).success(function(data){
-  	
+    if (data != null){
+      resetData = false;
+    }
+    console.log(data);
   }).fail(function(){
     console.log("Cannot load view");
   }).complete(function(){
-    setTimeout(function(){check_data();}, 1000);
+    time = 1000;
+    sec = 1;
+    if (!resetData) {
+      time = 5000;
+      sec = 5;
+    }
+    setTimeout(function(){check_data();}, time);
   });
 }
 
