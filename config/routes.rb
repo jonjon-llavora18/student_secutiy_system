@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'parent/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   get 'pages/index'
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
 
   get "login_user", to: "pages#login_user", as: :login_user
   get "get_api", to: "pages#get_api", as: :get_api
+  get "parent", to: "parent#index"
   post "verify_login", to: "pages#verify_login", as: :verify_login
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
