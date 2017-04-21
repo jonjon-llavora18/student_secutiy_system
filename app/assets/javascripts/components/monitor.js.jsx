@@ -12,6 +12,7 @@ var Monitor = React.createClass({
     	setInterval(this.checkData, this.state.time);
     },
 
+
     checkData: function() {
       var resetData = true;
       var $this = this;
