@@ -36,7 +36,7 @@ var Monitor = React.createClass({
 					<img src="images/logo.png" />
 					Student Security System
 				</h1>
-				<InitialPage />
+				<ErrorPage />
 		 	</div>
 		)
 	}
