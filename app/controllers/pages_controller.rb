@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 
   def verify_login
     data = StudentInformation.find_by_id(params[:id_number])
-    StudentRecord.create!(description: "login", record_date: Date.current, student_information_id: data.id, name: "#{data.first_name} #{data.last_name}") if data.present?
+    StudentRecord.create!(description: "login", record_date: Date.current, student_information_id: data.id, name: "#{data.first_name} #{data.last_name}", record_time: DateTime.current.strftime("%H:%M:%S")) if data.present?
     session[:id_number] = data.present? ? data.id : "error"
     uri = URI.parse("https://www.isms.com.my/isms_send.php")
     Net::HTTP.post_form(uri, {
@@ -25,12 +25,13 @@ class PagesController < ApplicationController
       :msg => 'YOUR STUDENT HAS LOGIN :D',
       :type => '1',
     })
+
     redirect_to login_user_path
   end
 
   def verify_logout
     data = StudentInformation.find_by_id(params[:id_number])
-    StudentRecord.create!(description: "logout", record_date: Date.current, student_information_id: data.id, name: "#{data.first_name} #{data.last_name}") if data.present?
+    StudentRecord.create!(description: "logout", record_date: Date.current, student_information_id: data.id, name: "#{data.first_name} #{data.last_name}", record_time: DateTime.current.strftime("%H:%M:%S")) if data.present?
     session[:id_number] = data.present? ? data.id : "error"
     uri = URI.parse("https://www.isms.com.my/isms_send.php")
     Net::HTTP.post_form(uri, {
@@ -40,6 +41,7 @@ class PagesController < ApplicationController
       :msg => 'YOUR STUDENT HAS LOGOUT :D',
       :type => '1',
     })
+
     redirect_to logout_user_path
   end
 

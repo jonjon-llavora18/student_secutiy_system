@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422034202) do
+ActiveRecord::Schema.define(version: 20170422063037) do
 
   create_table "student_informations", force: :cascade do |t|
     t.string   "first_name",        limit: 255
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170422034202) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name",                   limit: 255
+    t.string   "record_time",            limit: 255
   end
 
   add_index "student_records", ["student_information_id"], name: "index_student_records_on_student_information_id", using: :btree
