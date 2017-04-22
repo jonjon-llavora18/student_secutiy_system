@@ -12,7 +12,7 @@ var DetailPage = React.createClass({
 			    </div>
 			    <div className="student-text-info student-information-div">
 			      <span className="student-txt-inf student-name">{this.props.data.first_name} {this.props.data.last_name}</span>
-			      <span className="student-txt-inf student-id">{this.props.data.phone_number}</span>
+			      <span className="student-txt-inf student-id">Placeholder</span>
 			      <span className="student-txt-inf student-timein">IN: 03:44:36</span>
 			    </div>
 			  </div>

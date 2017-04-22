@@ -23,11 +23,11 @@ var Monitor = React.createClass({
       }).success(function(data){
         if (data != null){
           $this.setState({reset: false});
-          $this.setState({ activePage: "success" });
+          $this.setState({ activePage: "success", studentData: data });
 
           var obj = document.createElement("audio");
-	        obj.src="https://www.soundjay.com/button/sounds/beep-29.mp3";
-	        obj.volume=0.60;
+	        obj.src="https://www.soundjay.com/button/sounds/beep-22.mp3";
+	        obj.volume=1;
 	        obj.autoPlay=false;
 	        obj.preLoad=true;
 	        obj.controls=true;
@@ -41,7 +41,7 @@ var Monitor = React.createClass({
           
           var obj = document.createElement("audio");
 	        obj.src="https://www.soundjay.com/button/sounds/beep-027.mp3";
-	        obj.volume=0.50;
+	        obj.volume=1;
 	        obj.autoPlay=false;
 	        obj.preLoad=true;
 	        obj.controls=true; 
