@@ -26,7 +26,7 @@ body, html {
 // Homepage
 .homepage {
   background: #3498db url("../images/background.png") no-repeat right bottom;
-  background-size: 30% auto;
+  background-size: 35% auto;
   height: 100vh;
 }
 
@@ -65,6 +65,16 @@ body, html {
   margin-top: 7.5%;
 }
 
+.date_today {
+  float: right;
+  margin-top: 42px;
+  margin-right: 55px;
+  font-size: 68px;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: none;
+}
+
 .box-hr {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
@@ -101,12 +111,14 @@ body, html {
 }
 
 .student-name {
-  color: #ecf0f1;
+  color: #fff;
+  border-bottom: 2px solid #fff;
   font-size: 100px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  text-transform: none;
+  text-transform: uppercase;
   text-shadow: 0 3px 0 rgba(0, 0, 0, 0.4);
+  margin-bottom: 50px;
 }
 
 .student-information-div {
@@ -120,9 +132,10 @@ body, html {
   border-radius: 5px;
   font-size: 70px;
   letter-spacing: 3px;
-  margin: 10px auto;
+  margin: 10px 0;
   font-weight: 700;
-  width: 475px;
+  width: 100%;
+  color: #ecf0f1;
 }
 
 .student-timein {
@@ -130,6 +143,7 @@ body, html {
   font-size: 60px;
   letter-spacing: 3px;
   font-weight: 700;
+  text-align: left;
 }
 
 .error-mascott {
