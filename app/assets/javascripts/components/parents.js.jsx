@@ -1,12 +1,17 @@
 var Parents = React.createClass({
   getInitialState: function() {
     return {
-      studentData: []
+      studentData: [],
     }
   },
 
   componentDidMount: function() {
+    var $this = this;
     this.studentInformation();
+
+    setInterval(function() {
+      $this.studentInformation();
+    }, 4000);
   },
 
   studentInformation: function() {
@@ -16,11 +21,24 @@ var Parents = React.createClass({
       url: "/student_api",
       dataType: "json"
     }).success(function(data){
-      console.log(data)
-    })
+      $this.setState({
+        studentData: data
+      });
+    });
   },
 
   render: function() {
+    var studentDatas = this.state.studentData;
+    var dataList = studentDatas.map(function(item, key) {
+      return (
+        <tr key={key}>
+          <td>{item.record_date}</td>
+          <td>{item.updated_at}</td>
+          <td>08:45:00 PM</td>
+        </tr>
+      );
+    });
+
     return (
       <div>
         <div className="clearfix parent-header">
@@ -66,36 +84,7 @@ var Parents = React.createClass({
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>4/8/2017</td>
-              <td>10:23:33 AM</td>
-              <td>08:45:00 PM</td>
-            </tr>
-            <tr>
-              <td>4/8/2017</td>
-              <td>10:23:33 AM</td>
-              <td>08:45:00 PM</td>
-            </tr>
-            <tr>
-              <td>4/8/2017</td>
-              <td>10:23:33 AM</td>
-              <td>08:45:00 PM</td>
-            </tr>
-            <tr>
-              <td>4/8/2017</td>
-              <td>10:23:33 AM</td>
-              <td>08:45:00 PM</td>
-            </tr>
-            <tr>
-              <td>4/8/2017</td>
-              <td>10:23:33 AM</td>
-              <td>08:45:00 PM</td>
-            </tr>
-            <tr>
-              <td>4/8/2017</td>
-              <td>10:23:33 AM</td>
-              <td>NO LOGS</td>
-            </tr>
+            {dataList}
           </tbody>
         </table>
       </div>
