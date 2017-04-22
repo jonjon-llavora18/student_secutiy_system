@@ -11,13 +11,9 @@ class PagesController < ApplicationController
     end
   end
 
-  def reset_data
-    session[:id_number] = nil
-  end
-
   def verify_login
     data = StudentInformation.find_by_id(params[:id_number])
-    StudentRecord.create!(description: "login", record_date: Date.current, student_information_id: data.id) if data.present?
+    StudentRecord.create!(description: "login", record_date: Date.current, student_information_id: data.id, name: "#{data.first_name} #{data.last_name}") if data.present?
     session[:id_number] = data.present? ? data.id : "error"
 
     redirect_to login_user_path
