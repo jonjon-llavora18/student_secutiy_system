@@ -10,10 +10,12 @@ Rails.application.routes.draw do
   root "pages#index"
 
   get "login_user", to: "pages#login_user", as: :login_user
+  get "logout_user", to: "pages#logout_user", as: :logout_user
   get "get_api", to: "pages#get_api", as: :get_api
   get "parent", to: "parent#index"
   get "student_api", to: "parent#student_api"
   post "verify_login", to: "pages#verify_login", as: :verify_login
+  post "verify_logout", to: "pages#verify_logout", as: :verify_logout
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
