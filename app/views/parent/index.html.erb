@@ -1,3 +1,54 @@
 <div class="parent-dashboard">
-  <%= react_component("Parents") %>
+  <div class="parent-header clearfix">
+    <div class="parent-logo pull-left">
+      Student Security Management System
+    </div>
+    <div class="parent-student-id pull-right">
+      Student ID: F10000566874
+    </div>
+  </div>
+  <div class="parent-wrapper">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="student-info-wrap">
+          <div class="info-wrap-header">
+            Student Information
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <%= image_tag "dummy_101.jpg", class: "parent-student-photo" %>
+            </div>
+            <div class="col-md-8">
+              <div class="clearfix parent-inf-wrap">
+                <span class="pull-left parent-label">Name :</span>
+                <span class="pull-left parent-stud-info">James Ivan Pilapil</span>
+              </div>
+              <div class="clearfix parent-inf-wrap">
+                <span class="pull-left parent-label">Address :</span>
+                <span class="pull-left parent-stud-info">Fort Bonifacio, BGC, Taguig 3393</span>
+              </div>
+              <div class="clearfix parent-inf-wrap">
+                <span class="pull-left parent-label">Phone Number :</span>
+                <span class="pull-left parent-stud-info">+639175596008</span>
+              </div>
+              <div class="clearfix parent-inf-wrap">
+                <span class="pull-left parent-label">Birthdate :</span>
+                <span class="pull-left parent-stud-info">January 08 1999</span>
+              </div>
+              <div class="clearfix parent-inf-wrap">
+                <span class="pull-left parent-label">Email :</span>
+                <span class="pull-left parent-stud-info">ivanpilapil@bibo.com.ph</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="info-wrap-header-2">
+          Student CheckIn Schedule
+        </div>
+        <%= react_component("Parents") %>
+      </div>
+    </div>
+  </div>
 </div>
