@@ -1,31 +1,22 @@
 var Parents = React.createClass({
   getInitialState: function() {
     return {
-      studentData: [],
-      sec: 1,
-      reset: true,
-      time: 1000
+      studentData: []
     }
   },
 
   componentDidMount: function() {
-    this.checkData();
+    this.studentInformation();
   },
 
-  checkData: function() {
+  studentInformation: function() {
     var $this = this;
-    $this.setState({reset: true});
 
     $.ajax({
-      url: "/get_api",
-      dataType: "json",
-      data: {seconds: $this.state.sec}
+      url: "/student_api",
+      dataType: "json"
     }).success(function(data){
-      if (data != null){
-        $this.setState({reset: false});
-      } else {
-        $this.setState({reset: false});
-      }
+      console.log(data)
     })
   },
 
