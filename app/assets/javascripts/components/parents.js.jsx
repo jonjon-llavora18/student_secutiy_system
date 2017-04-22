@@ -6,7 +6,12 @@ var Parents = React.createClass({
   },
 
   componentDidMount: function() {
+    var $this = this;
     this.studentInformation();
+
+    setInterval(function() {
+      $this.studentInformation();
+    }, 4000);
   },
 
   studentInformation: function() {
