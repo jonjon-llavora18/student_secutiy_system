@@ -17,14 +17,14 @@ class PagesController < ApplicationController
     data = StudentInformation.find_by_id(params[:id_number])
     StudentRecord.create!(description: "login", record_date: Date.current, student_information_id: data.id, name: "#{data.first_name} #{data.last_name}", record_time: DateTime.current.strftime("%H:%M:%S")) if data.present?
     session[:id_number] = data.present? ? data.id : "error"
-    #uri = URI.parse("https://www.isms.com.my/isms_send.php")
-    #Net::HTTP.post_form(uri, {
-    #  :un => 'buganblack',
-    #  :pwd => '123qwe123qweRR',
-    #  :dstno => '639177125865',
-    #  :msg => 'YOUR STUDENT HAS LOGIN :D',
-    #  :type => '1',
-    #})
+    uri = URI.parse("https://www.isms.com.my/isms_send.php")
+    Net::HTTP.post_form(uri, {
+      :un => 'buganblack',
+      :pwd => '123qwe123qweRR',
+      :dstno => data.guardian_contacts,
+      :msg => "#{data.first_name} #{data.last_name}, has check-in to the school",
+      :type => '1',
+    })
 
     redirect_to login_user_path
   end
@@ -33,14 +33,14 @@ class PagesController < ApplicationController
     data = StudentInformation.find_by_id(params[:id_number])
     StudentRecord.create!(description: "logout", record_date: Date.current, student_information_id: data.id, name: "#{data.first_name} #{data.last_name}", record_time: DateTime.current.strftime("%H:%M:%S")) if data.present?
     session[:id_number] = data.present? ? data.id : "error"
-    #uri = URI.parse("https://www.isms.com.my/isms_send.php")
-    #Net::HTTP.post_form(uri, {
-    #  :un => 'buganblack',
-    #  :pwd => '123qwe123qweRR',
-    #  :dstno => '639177125865',
-    #  :msg => 'YOUR STUDENT HAS LOGOUT :D',
-    #  :type => '1',
-    #})
+    uri = URI.parse("https://www.isms.com.my/isms_send.php")
+    Net::HTTP.post_form(uri, {
+      :un => 'buganblack',
+      :pwd => '123qwe123qweRR',
+      :dstno => data.guardian_contacts,
+      :msg => "#{data.first_name} #{data.last_name}, has check-out to the school",
+      :type => '1',
+    })
 
     redirect_to logout_user_path
   end
