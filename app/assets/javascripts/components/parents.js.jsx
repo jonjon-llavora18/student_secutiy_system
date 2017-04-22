@@ -33,8 +33,8 @@ var Parents = React.createClass({
       return (
         <tr key={key}>
           <td>{item.record_date}</td>
-          <td>{item.updated_at}</td>
-          <td>08:45:00 PM</td>
+          <td>{item.record_time}</td>
+          <td>{item.description}</td>
         </tr>
       );
     });
@@ -79,8 +79,8 @@ var Parents = React.createClass({
           <thead>
             <tr>
               <th>Date</th>
-              <th>Time In</th>
-              <th>Time Out</th>
+              <th>Time</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
