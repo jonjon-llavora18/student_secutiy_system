@@ -1,8 +1,4 @@
 var DetailPage = React.createClass({
-	componentDidMount: function() {
-		console.log(this.props.data);
-	},
-
 	render: function() {
 		return (
 			<div>
