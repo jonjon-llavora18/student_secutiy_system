@@ -62,7 +62,7 @@ var Monitor = React.createClass({
     render: function() {
         var activePage;
         if(this.state.activePage == "initial") {
-            activePage = <InitialPage />;
+            activePage = <InitialPage date_today={this.props.date_today} />;
         }
         if (this.state.activePage == "error") {
             activePage = <ErrorPage />;
@@ -75,7 +75,8 @@ var Monitor = React.createClass({
             <div>
                 <h1 className="home-header homeHeader">
                     <img src="images/logo.png" />
-                    Student Security System
+                    BIBO GLOBAL OPPORTUNITY
+                  <span className="date_today">{this.props.date_today}</span>
                 </h1>
                 {activePage}
              </div>

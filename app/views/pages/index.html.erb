@@ -1,3 +1,8 @@
 <div class="homepage clearfix">
-  <%= react_component("Monitor") %>
+	<% 
+		t = Time.now
+		t.strftime("Printed on %m/%d/%Y")
+		date_today = t.strftime("%B %d, %Y") 
+	%>
+  <%= react_component("Monitor", {date_today: date_today}) %>
 </div>

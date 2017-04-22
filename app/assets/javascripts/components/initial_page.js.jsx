@@ -26,8 +26,16 @@ var InitialPage = React.createClass({
 	},
 
 	render: function() {
+		var tdate = new Date();
+		var dd = tdate.getDate();
+		var MM = tdate.getMonth();
+		var yyyy = tdate.getFullYear();
+		var xxx = dd + "-" +( MM+1) + "-" + yyyy;
+
 		return (
-			<div className="home-clock"></div>
+			<div>
+				<div className="home-clock"></div>
+			</div>
 		)
 	}
 });
