@@ -171,6 +171,36 @@ body, html {
   top: -3px;
 }
 
+// Announcement
+.home-announcement {
+  height: 60px;
+  border-bottom: 4px solid #1272b2;
+  border-top: 4px solid #1272b2;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  line-height: 50px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.announcement-text {
+  overflow: hidden;
+  position: absolute;
+  font-size: 18px;
+  color: #fff;
+  white-space: nowrap;
+  font-weight: 400;
+
+  strong {
+    color: #0c5c92;
+    font-weight: 700;
+    padding-right: 10px;
+  }
+}
+
+
 // Login User
 .login_user {
   text-align: center;
